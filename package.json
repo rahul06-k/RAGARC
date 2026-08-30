@@ -1,0 +1,11 @@
+{
+  "name": "college-rag-root",
+  "version": "1.0.0",
+  "description": "Full-Stack AI-Powered College Information Assistant (RAG Platform)",
+  "scripts": {
+    "dev": "npm --prefix client run dev",
+    "build": "npm --prefix client run build",
+    "client": "npm --prefix client run dev",
+    "server": "uvicorn server.app.main:app --host 127.0.0.1 --port 8000 --reload"
+  }
+}
