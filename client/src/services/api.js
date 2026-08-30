@@ -1,7 +1,9 @@
 import axios from 'axios';
 
+const API_BASE_URL = import.meta.env.VITE_API_URL || '/api';
+
 const api = axios.create({
-  baseURL: '/api',
+  baseURL: API_BASE_URL,
   headers: {
     'Content-Type': 'application/json',
   },
@@ -62,7 +64,7 @@ export const documentApi = {
   reprocessDocument: (id) => api.post(`/documents/${id}/reprocess`),
   updateDocument: (id, data) => api.put(`/documents/${id}`, data),
   deleteDocument: (id) => api.delete(`/documents/${id}`),
-  getSourceUrl: (id) => `/api/documents/${id}/source`,
+  getSourceUrl: (id) => `${API_BASE_URL.replace(/\/+$/, '')}/documents/${id}/source`,
 };
 
 export const adminApi = {
